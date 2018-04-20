@@ -13,4 +13,3 @@ plt.ylabel('F(t)')
 plt.show()
 
 z = np.polyfit(my_data[:,0], my_data[:,1], 3)
-z

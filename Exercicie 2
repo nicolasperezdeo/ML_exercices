@@ -1,0 +1,34 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.linalg import hilbert
+
+k = (np.linspace(1,30,30))
+
+print(k)
+
+def Hilbert(dim):
+    H = np.zeros((dim,dim))
+    i = np.arange(dim)
+    j = np.arange(dim)
+   # H = 1/(i+j+1)
+    for i in range(0,dim):
+         for j in range(0,dim):
+             H[i][j] = 1/(i+j+1)
+    return H
+def rank(matrix):
+        return np.linalg.matrix_rank(matrix)
+
+
+k = [1, 2, 3, 5, 10, 15, 20, 30, 50, 100]
+
+x = []
+for i in np.arange(np.size(k)):
+    b = np.ones(k[i])
+    H = Hilbert(k[i])
+    x.append(np.linalg.solve(H,b))
+    print(x[i])
+
+
+
+
+
